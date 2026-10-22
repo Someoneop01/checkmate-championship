@@ -1,200 +1,73 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anga Open Chess Tournament Certificate</title>
+<main class="certificate" id="certificate">
+  <div class="inner-border">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <div class="green-corner corner-tl"></div>
+    <div class="green-corner corner-tr"></div>
+    <div class="green-corner corner-bl"></div>
+    <div class="green-corner corner-br"></div>
 
-<header class="controls">
-  <h1>♟ Checkmate Championship</h1>
-  <p>Professional Chess Certificate Generator</p>
+    <header class="merit-heading">
+      <h1>1st Trial of Anga Open</h1>
+      <h2>FIDE Rapid Rating Chess Tournament, 2026</h2>
 
-  <div class="form-grid">
-    <label>Player Name<input id="player" placeholder="Enter player name"></label>
-    <label>FIDE ID<input id="fideId" placeholder="Enter FIDE ID"></label>
-    <label>Event Code<input id="eventCode" placeholder="Leave blank if unavailable"></label>
-    <label>Certificate Serial Number<input id="serial" value="001"></label>
-    <label>Player State / City<input id="state" placeholder="Enter state or city"></label>
-    <label>Points Scored<input id="points" placeholder="e.g. 6.5"></label>
-    <label>Total Rounds<input id="rounds" placeholder="e.g. 9"></label>
-    <label>Final Rank<input id="rank" placeholder="e.g. 1st"></label>
-    <label>Tournament Dates<input id="dates" placeholder="Enter dates"></label>
-    <label>Venue<input id="venue" placeholder="Enter venue"></label>
-  </div>
+      <p class="event-code">
+        <strong>Event Code:</strong>
+        <span id="outEventCode"></span>
+      </p>
 
- 
-  <div class="bulk-label">
-    <label for="bulkPlayers">Bulk Players — one player per line</label>
-    <textarea id="bulkPlayers" rows="7" placeholder="Name | FIDE ID | Event Code | Serial | State/City | Points | Rounds | Rank"></textarea>
-  </div>
+      <p class="organized">
+        <strong>Organized by:</strong>
+        Bhagalpur District Chess Association
+      </p>
+    </header>
 
-  <div class="import-section">
+    <div class="merit-logos">
+      <img src="./fide.png" alt="FIDE">
+      <img src="./golden-crown.png" alt="Chess crown">
+      <div class="merit-title">Certificate of Merit</div>
+      <img src="./abca.png" alt="All Bihar Chess Association">
+      <img src="./bdca.png" alt="Bhagalpur District Chess Association">
+    </div>
 
-    
-<div class="import-section">
-  <label for="playerFile">Import Players from Excel / CSV</label>
-  <input
-    type="file"
-    id="playerFile"
-    accept=".csv,.xlsx,.xls"
-  >
+    <section class="merit-content">
+      <p class="merit-description">
+        This is to certify that
+        <strong class="green-text" id="outPlayer">PLAYER NAME</strong>
+        of <strong class="green-text" id="outState">—</strong>
+        has participated in the 1st Trial of Anga Open FIDE Rapid Rating
+        Chess Tournament, 2026. He / She scored
+        <strong class="green-text" id="outPoints">—</strong>
+        points from <strong id="outRounds">—</strong> rounds and secured
+        <strong class="green-text" id="outRank">—</strong> rank in the final.
+      </p>
+    </section>
 
-  <button type="button" id="downloadTemplateBtn">
-    Download CSV Template
-  </button>
+    <section class="merit-event-details">
+      <p><strong>Venue:</strong> <span id="outVenue">________________</span></p>
+      <p><strong>Date:</strong> <span id="outDates">________________</span></p>
+      <p><strong>FIDE ID:</strong> <span id="outFideId">—</span></p>
+    </section>
 
-  <p id="importStatus" role="status"></p>
-  <div id="validationReport"></div>
-</div>
-
-  </label>
-
-  <p class="help">
-    Format: Name | FIDE ID | Event Code | Serial | State/City | Points | Rounds | Rank.
-    Dates and venue are taken from the fields above.
-  </p>
-
-  <div class="buttons">
-    <button type="button" id="updateBtn">Update Preview</button>
-    <button type="button" id="generateBtn">Generate All Certificates</button>
-    <button type="button" id="printBtn">Print / Save All as PDF</button>
-    <button type="button" id="resetBtn">Reset Details</button>
-  </div>
-
-  <p id="status" role="status">Ready.</p>
-</header>
-
-<div id="previewArea">
-  <main class="certificate" id="certificate">
-    <div class="inner-border">
-
-      <div class="logo-row">
-        <img src="./bdca.png" alt="Bhagalpur District Chess Association">
-        <img src="./abca.png" alt="All Bihar Chess Association">
-        <img src="./fide.png" alt="FIDE">
-        <img src="./golden-crown.png" alt="Golden Crown">
+    <footer class="merit-signatures">
+      <div class="merit-signature">
+        <div class="signature-line"></div>
+        <h3>Mr. Dharmendra Kumar</h3>
+        <p>Hon'ble Secretary</p>
+        <p>All Bihar Chess Association</p>
       </div>
 
-      <section class="tournament-heading">
-        <p class="eyebrow">OFFICIAL TOURNAMENT CERTIFICATE</p>
+      <div class="merit-signature">
+        <div class="signature-line"></div>
+        <h3>Dr. Ajay Kumar Singh</h3>
+        <p>Hon'ble President</p>
+        <p>Bhagalpur District Chess Association</p>
+      </div>
+    </footer>
 
-        <h1>
-          1st Trial of Anga Open<br>
-          FIDE Rapid Rating Chess Tournament 2026
-        </h1>
-
-        <div class="heading-line"></div>
-
-        <p class="organized">ORGANIZED BY</p>
-        <h2>BHAGALPUR DISTRICT CHESS ASSOCIATION</h2>
-
-        <p class="aegis">
-          Under the Aegis of AICF and All Bihar Chess Association
-        </p>
-
-        <p class="event-code">
-          EVENT CODE: <span id="outEventCode"></span>
-        </p>
-      </section>
-
-      <section class="certificate-content">
-        <h2 class="certificate-title">CERTIFICATE OF PARTICIPATION</h2>
-
-        <p class="presented">This certificate is proudly presented to</p>
-
-        <h3 class="player-name" id="outPlayer">PLAYER NAME</h3>
-
-        <div class="name-line"></div>
-
-        <p class="paragraph">
-          In recognition of participation in the 1st Trial of Anga Open
-          FIDE Rapid Rating Chess Tournament 2026, organized by
-          Bhagalpur District Chess Association under the aegis of AICF
-          and All Bihar Chess Association.
-        </p>
-      </section>
-
-      <section class="player-details">
-        <div class="detail">
-          <span>FIDE ID</span>
-          <strong id="outFideId">—</strong>
-        </div>
-
-        <div class="detail">
-          <span>STATE / CITY</span>
-          <strong id="outState">—</strong>
-        </div>
-
-        <div class="detail">
-          <span>POINTS</span>
-          <strong id="outPoints">—</strong>
-        </div>
-
-        <div class="detail">
-          <span>TOTAL ROUNDS</span>
-          <strong id="outRounds">—</strong>
-        </div>
-
-        <div class="detail">
-          <span>FINAL RANK</span>
-          <strong id="outRank">—</strong>
-        </div>
-      </section>
-
-      <section class="event-details">
-        <p><strong>VENUE:</strong> <span id="outVenue">________________</span></p>
-        <p><strong>TOURNAMENT DATES:</strong> <span id="outDates">________________</span></p>
-      </section>
-
-      <section class="signature-row">
-        <div class="signature-box">
-          <div class="signature-space"></div>
-          <h4>Mr. Dharmendra Kumar</h4>
-          <p>Hon'ble Secretary</p>
-          <p>All Bihar Chess Association</p>
-        </div>
-
-        <div class="signature-box">
-          <div class="signature-space"></div>
-          <h4>Dr. Ajay Kumar Singh</h4>
-          <p>Hon'ble President</p>
-          <p>Bhagalpur District Chess Association</p>
-        </div>
-
-        <div class="signature-box">
-          <div class="signature-space"></div>
-          <h4>Mr. Ajay Kumar Mishra</h4>
-          <p>Hon'ble Secretary</p>
-          <p>Bhagalpur District Chess Association</p>
-        </div>
-
-        <div class="signature-box">
-          <div class="signature-space"></div>
-          <h4>IA Jyoti Shankar Nanda</h4>
-          <p>Chief Arbiter</p>
-        </div>
-      </section>
-
-      <footer class="certificate-footer">
-        <span>CERTIFICATE NO. <strong id="outSerial">001</strong></span>
-        <span>CHECKMATE CHAMPIONSHIP</span>
-      </footer>
-
+    <div class="merit-serial">
+      CERTIFICATE NO. <strong id="outSerial">001</strong>
     </div>
-  </main>
-</div>
 
-<section id="printPages"></section>
-
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+  </div>
+</main>
